@@ -1,0 +1,230 @@
+.app {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #000;
+}
+
+.title {
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 24px 0 12px;
+  font-size: clamp(1.1rem, 2vw, 1.8rem);
+  text-transform: uppercase;
+  transition: opacity 0.4s ease;
+}
+
+.title.hidden {
+  opacity: 0;
+}
+
+.hero {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.meme {
+  width: auto;
+  max-width: calc(100% - 40px);
+  max-height: 80vh;
+  height: auto;
+  transition: opacity 0.6s ease;
+  filter: grayscale(1);
+  object-fit: contain;
+}
+
+.grug {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: auto;
+  max-width: calc(100% - 80px);
+  max-height: 70vh;
+  opacity: 0;
+  transform: translateX(-50%) scale(0.92);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 1;
+  filter: grayscale(1);
+}
+
+.grug.show {
+  opacity: 1;
+}
+
+.grug.ponder {
+  z-index: 5;
+  animation: grug-ponder 2s ease-in-out infinite;
+}
+
+.grug.focus {
+  z-index: 6;
+  animation: none;
+  transform: translateX(-50%) scale(1);
+}
+
+.meme.fade {
+  opacity: 0.08;
+}
+
+.stream-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5vw;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 3;
+}
+
+.stream-overlay.visible {
+  opacity: 1;
+}
+
+.stream-text {
+  font-size: 10vh;
+  line-height: 1.1;
+  text-align: center;
+  word-break: break-word;
+}
+
+.grug-title {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 6;
+}
+
+.grug-title.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.whiteout {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.whiteout.show {
+  opacity: 1;
+}
+
+.yes {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: clamp(3rem, 15vw, 14rem);
+  letter-spacing: 4px;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  z-index: 7;
+}
+
+.yes.visible {
+  opacity: 1;
+}
+
+@keyframes grug-ponder {
+  0% {
+    transform: translateX(-50%) scale(0.92);
+  }
+  50% {
+    transform: translateX(-50%) scale(0.96);
+  }
+  100% {
+    transform: translateX(-50%) scale(0.92);
+  }
+}
+
+.panel {
+  padding: 16px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: opacity 0.6s ease;
+}
+
+.panel.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.label {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 88px;
+  max-height: 120px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  padding: 12px;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: 2px solid #000;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 12px 18px;
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  font-family: 'Press Start 2P', 'Courier New', monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+small {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
