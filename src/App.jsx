@@ -73,11 +73,17 @@ function App() {
           className={`meme ${phase !== 'idle' ? 'fade' : ''}`}
         />
 
-        <img
-          src="/grug.png"
-          alt="Grug brain engineer"
-          className={`grug ${(phase === 'grug' || phase === 'yes') ? 'show' : ''} ${phase === 'grug' ? 'ponder' : ''} ${phase === 'yes' ? 'focus' : ''}`}
-        />
+        <div
+          className={`grug-stack ${phase === 'grug' || phase === 'yes' ? 'show' : ''} ${
+            phase === 'grug' ? 'pondering' : ''
+          }`}
+        >
+          <img
+            src="/grug.png"
+            alt="Grug brain engineer"
+            className={`grug ${phase === 'grug' ? 'ponder' : ''} ${phase === 'yes' ? 'focus' : ''}`}
+          />
+        </div>
 
         <div className={`stream-overlay ${phase === 'streaming' ? 'visible' : ''}`}>
           <p className="stream-text">{streamedText}</p>
