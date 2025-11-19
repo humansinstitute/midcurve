@@ -83,7 +83,9 @@ function App() {
           <p className="stream-text">{streamedText}</p>
         </div>
 
-        <div className={`grug-title ${phase === 'grug' ? 'show' : ''}`}>Am I midcurving</div>
+        <div className={`grug-title ${phase === 'grug' || phase === 'yes' ? 'show' : ''}`}>
+          Am I midcurving
+        </div>
 
         <div className={`whiteout ${phase === 'yes' ? 'show' : ''}`} />
 

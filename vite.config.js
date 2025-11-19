@@ -8,9 +8,11 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5173,
     strictPort: true,
+    origin: 'https://midcurve.otherstuff.ai',
     hmr: {
-      host: 'dev.otherstuff.studio',
-      port: 5173,
+      protocol: 'wss',
+      host: 'midcurve.otherstuff.ai',
+      port: 443,
     },
   },
 })

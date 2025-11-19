@@ -59,7 +59,7 @@
 }
 
 .grug.ponder {
-  z-index: 5;
+  z-index: 6;
   animation: grug-ponder 2s ease-in-out infinite;
 }
 
@@ -107,7 +107,7 @@
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.4s ease, transform 0.4s ease;
-  z-index: 6;
+  z-index: 7;
 }
 
 .grug-title.show {
@@ -139,7 +139,7 @@
   letter-spacing: 4px;
   opacity: 0;
   transition: opacity 0.8s ease;
-  z-index: 7;
+  z-index: 5;
 }
 
 .yes.visible {
