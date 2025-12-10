@@ -15,6 +15,7 @@ export default defineConfig({
       '127.0.0.1',
       '.otherstuff.ai',
       '.otherstuff.studio',
+      '.wmhost.app',
     ],
   },
 })
